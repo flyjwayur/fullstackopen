@@ -5,8 +5,8 @@ const Content = ({ parts }) => {
   return (
     <div>
       {parts
-        ? parts.map(({ name, count }, index) => (
-            <Part key={"_" + index} name={name} count={count} />
+        ? parts.map(({ name, exercises }, index) => (
+            <Part key={"_" + index} name={name} exercises={exercises} />
           ))
         : null}
     </div>
