@@ -14,6 +14,10 @@ const anecdotes = [
 const App = (props) => {
   const [selected, setSelected] = useState(0);
 
+  const [votes, setVotes] = useState(
+    new Array(anecdotes.length + 1).join("0").split("").map(parseFloat)
+  );
+
   const getRandomInt = (max) => {
     return Math.floor(Math.random() * max);
   };
@@ -22,9 +26,16 @@ const App = (props) => {
     setSelected(getRandomInt(anecdotesLength));
   };
 
+  const handleVoteAnecdote = () => {
+    const newVotes = [...votes];
+    setVotes(newVotes, newVotes[selected]++);
+  };
+
   return (
     <div>
       <div>{props.anecdotes[selected]}</div>
+      <div>has {votes[selected]} votes</div>
+      <button onClick={handleVoteAnecdote}>vote</button>
       <button onClick={handleNextAnecdote(anecdotes.length)}>
         Next anecdote
       </button>
