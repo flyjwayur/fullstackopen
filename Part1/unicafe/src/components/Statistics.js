@@ -1,5 +1,6 @@
 import React from "react";
 import Heading from "./Heading";
+import Statistic from "./Statistic";
 
 const Statistics = ({ good, neutral, bad }) => {
   const all = good + neutral + bad;
@@ -10,12 +11,12 @@ const Statistics = ({ good, neutral, bad }) => {
       <Heading name="statistics" />
       {all !== 0 ? (
         <div>
-          <div>good {good}</div>
-          <div>neutral {neutral}</div>
-          <div>bad {bad}</div>
-          <div>all {all}</div>
-          <div>average {average}</div>
-          <div>positive Feedback {positive + "%"}</div>
+          <Statistic text="Good" value={good} />
+          <Statistic text="Neutral" value={neutral} />
+          <Statistic text="Bad" value={bad} />
+          <Statistic text="All" value={all} />
+          <Statistic text="Average" value={average} />
+          <Statistic text="Positive Feedback" value={positive + "%"} />
         </div>
       ) : (
         "No feedback given"

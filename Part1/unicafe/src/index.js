@@ -3,10 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import Statistics from "./components/Statistics";
 import Heading from "./components/Heading";
-
-const Button = ({ handleClick, text }) => {
-  return <button onClick={handleClick}>{text}</button>;
-};
+import Button from "./components/Button";
 
 const App = () => {
   const [good, setGood] = useState(0);
