@@ -1,30 +1,11 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-
-const Heading = ({ name }) => {
-  return <h1>{name}</h1>;
-};
+import Statistics from "./components/Statistics";
+import Heading from "./components/Heading";
 
 const Button = ({ handleClick, text }) => {
   return <button onClick={handleClick}>{text}</button>;
-};
-
-const Statistics = ({ good, neutral, bad }) => {
-  const all = good + neutral + bad;
-  const average = all !== 0 ? good - bad / all : 0;
-  const positive = all !== 0 ? (good / all) * 100 : 0;
-  return (
-    <div>
-      <Heading name="statistics" />
-      <div>good {good}</div>
-      <div>neutral {neutral}</div>
-      <div>bad {bad}</div>
-      <div>all {all}</div>
-      <div>average {average}</div>
-      <div>positive Feedback {positive + "%"}</div>
-    </div>
-  );
 };
 
 const App = () => {
